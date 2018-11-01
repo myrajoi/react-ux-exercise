@@ -26,6 +26,8 @@ class App extends Component {
   }
   
   componentDidMount() {
+    // We have provided a simple getControls() API that will load controls.json 
+    // for you.  getControls() imposes an artificial delay of 1500ms.  
     getControls().then(controls => this.setState({ controls }))
   }
 
