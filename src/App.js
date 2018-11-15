@@ -1,24 +1,9 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import getControls from './api'
-import { Redirect, Route, Link, BrowserRouter as Router } from 'react-router-dom'
-
-const ControlList = ({ controls }) => (
-  <ul style={{ width: '200px', float: 'left' }}>
-    { controls.map((c) => (
-      <li key={c.id}>
-        <Link to={`/controls/${c.id}`}>{c.name} - {c.text}</Link>
-      </li>
-    ))}
-  </ul>
-)
-const ControlMain = ({ control }) => (
-  <div style={{ marginLeft: '250px' }}>
-    <h1>{control.name}</h1>
-    <h2>{ control.state && control.state.isImplemented ? 'Implemented' : 'Not Implemented'}</h2>
-    <p>{control.text}</p>
-  </div>
-)
+import { Redirect, Route, BrowserRouter as Router } from 'react-router-dom'
+import ControlList from './components/ControlList';
+import ControlMain from './components/ControlMain';
 
 class App extends Component {
   state = {
@@ -37,8 +22,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          { controls ? (
-            <Fragment>
+          { controls &&
+            <>
               <ControlList controls={controls} />
 
               <Route exact path='/'render={() => (
@@ -48,12 +33,8 @@ class App extends Component {
               <Route path='/controls/:controlId' render={({ match }) => (
                 <ControlMain control={controls.find(c => c.id.toString() === match.params.controlId)} />
               )} />
-            </Fragment>
-          ) : (
-            <div>
-              Loading Controls
-            </div>
-          )}
+            </>
+          }
         </div>
       </Router>
     );
