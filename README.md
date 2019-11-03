@@ -1,4 +1,3 @@
-# Aptible
 ## UX Enginer Candidate Excercise
 
 ### Setup
