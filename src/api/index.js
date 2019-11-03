@@ -16,9 +16,9 @@ const getControls = () => {
       getControlsPromise = null;
       return res(Controls)
     }, DELAY)
-  })
+  });
 
   return getControlsPromise;
-}
+};
 
 export default getControls;

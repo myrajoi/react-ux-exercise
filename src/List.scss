@@ -1,0 +1,42 @@
+.App-table {
+  td {
+    border-bottom: none;
+    font-size: 12px;
+  }
+
+  &-header {
+    th {
+      &:first-child {
+        padding-left: 23px;
+      }
+    }
+
+    tr {
+      border-bottom: #e9f1fd;
+    }
+  }
+
+  &-body {
+    tr {
+      font-size: 12px;
+      border-bottom: 1px solid #EBF4FF;
+    }
+  }
+}
+
+.control-header {
+  background-color: #f6f9fc;
+  padding: 19px 0 19px 23px;
+  margin-top: 1px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #627699;
+}
+
+.link-style {
+  text-decoration: none;
+  color: #93B0D2;
+  font-weight: bold;
+  font-size: 12px;
+  padding-left: 8px;
+}
