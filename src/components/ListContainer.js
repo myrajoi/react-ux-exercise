@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Grid } from "@material-ui/core";
-import FilterBar from "./FilterBar";
-import ControlList from "./ControlList";
+import FilterBar from "./FilterBar/FilterBar";
+import ControlList from "./ControlList/ControlList";
 import { Redirect, Route } from "react-router-dom";
 import getControls from "../api";
 import ControlMain from "./ControlMain";

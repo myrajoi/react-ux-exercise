@@ -1,11 +1,10 @@
 import React,  { useState } from 'react';
-import '../App.css';
-import '../List.scss';
+import './List.scss';
 import { Link } from 'react-router-dom';
-import { Box, Grid, Table, TableHead, TableCell, TableRow, TableBody, withStyles } from '@material-ui/core';
-import NotImplemented from '../assets/images/not-implemented-icon.svg';
-import Implemented from '../assets/images/implemented-icon.svg';
-import Unknown from '../assets/images/unknown-icon.svg';
+import { Box, Grid, Table, TableHead, TableCell, TableRow, TableBody } from '@material-ui/core';
+import NotImplemented from '../../assets/images/not-implemented-icon.svg';
+import Implemented from '../../assets/images/implemented-icon.svg';
+import Unknown from '../../assets/images/unknown-icon.svg';
 
 const ControlList = ({ controls, getClassName }) => {
 	const [selectedID, setSelectedID] = useState(null);
