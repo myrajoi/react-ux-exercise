@@ -1,9 +1,7 @@
 import React from 'react';
 import '../App.css';
-import { Card, Box } from "@material-ui/core";
-import Implemented from "../assets/images/implemented-icon.svg";
-import NotImplemented from "../assets/images/not-implemented-icon.svg";
-import Unknown from "../assets/images/unknown-icon.svg";
+import { Card } from "@material-ui/core";
+import StatusImage from "./StatusImage";
 
 const ControlMain = ({ control, getClassName }) => (
 	<Card className={'light-grey'}>
@@ -11,13 +9,10 @@ const ControlMain = ({ control, getClassName }) => (
 		<h2>
 			<span style={{ paddingRight: '4px' }}>STATUS</span>
 			<span>
-	            <img src={control.state ? (control.state.isImplemented ? Implemented : NotImplemented) : Unknown}
-	                 alt='Not Implemented'
-	                 className={getClassName(control)}/>
-	            <Box textAlign="right"
-	                 className={getClassName(control)}>
-	                {control.state ? (control.state.isImplemented ? 'IMPLEMENTED' : 'NOT IMPLEMENTED') : 'UNKNOWN'}
-	            </Box>
+	            <StatusImage
+		            state={control.state}
+		            className={getClassName(control)}
+	            />
             </span>
 		</h2>
 		<p>{control.text}</p>
