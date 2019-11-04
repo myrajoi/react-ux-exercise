@@ -56,7 +56,7 @@ const FilterBar = ({ controls, setControls, filteredStatuses, setFilteredList })
 	return (
 		<div className={'filter-bar'}>
 			Filter Controls:
-			<span style={{marginLeft: '12px'}}>
+			<span>
 				<ButtonGroup size="small" aria-label="small outlined button group">
                 <Button
 	                onClick={() => { filterStatuses('all'); }}>
@@ -66,19 +66,19 @@ const FilterBar = ({ controls, setControls, filteredStatuses, setFilteredList })
 	                onClick={() => { filterStatuses('implemented'); }}>
                     <img src={Implemented} alt={'Implemented'}/>
 	                <span>{isImplemented()} Implemented</span>
-                    <span style={{color: '#93b0d2'}}>{calculatePercentage(isImplemented(), controls.length)}</span>
+                    <span className={'percentage'}>{calculatePercentage(isImplemented(), controls.length)}</span>
                 </Button>
                 <Button
 	                onClick={() => { filterStatuses('not_implemented'); }}>
                     <img src={NotImplemented} alt={'Not Implemented'}/>
 	                <span>{isNotImplemented()} Not Implemented</span>
-                    <span style={{color: '#93b0d2'}}>{calculatePercentage(isNotImplemented(), controls.length)}</span>
+                    <span className={'percentage'}>{calculatePercentage(isNotImplemented(), controls.length)}</span>
                 </Button>
                 <Button
 	                onClick={() => { filterStatuses('unknown')} }>
                     <img src={Unknown} alt={'Unknown'}/>
 	                <span>{isUnknown()} Unknown</span>
-                    <span style={{color: '#93b0d2'}}>{calculatePercentage(isUnknown(), controls.length)}</span>
+                    <span className={'percentage'}>{calculatePercentage(isUnknown(), controls.length)}</span>
                 </Button>
 				</ButtonGroup>
             </span>
